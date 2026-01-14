@@ -1,5 +1,4 @@
 import './style.css';
-import emailjs from "emailjs-com";
 
 let templates = {};
 let users = [];
@@ -24,73 +23,65 @@ async function fetchData() {
   }
 }
 
-// ✅ Ensure event listeners & email function only run **after** data is loaded
-fetchData().then(() => {
-  // Attach event listeners **AFTER** data is loaded
-  document.getElementById("submitCode").addEventListener("click", handleLogin);
-  document.getElementById("userCodeInput").addEventListener("keypress", (e) => {
-    if (e.key === "Enter") handleLogin();
-  });
+// Create help button
+const helpButton = document.createElement("button");
+helpButton.id = "helpButton";
+helpButton.textContent = "?";
+helpButton.className = "help-button";
+document.body.appendChild(helpButton);
 
-  logoutButton.addEventListener("click", handleLogout);
+// Create help modal
+const modal = document.createElement("div");
+modal.id = "helpModal";
+modal.className = "modal-overlay";
+modal.innerHTML = `
+  <div class="modal-content">
+    <button id="closeModal" class="close-button">&times;</button>
+    
+    <h2 class="modal-title">🚗 Auto Dealer Offer Generator</h2>
+    
+    <p class="modal-description">
+      This app helps car dealerships create professional, legally-compliant promotional offers for lease and purchase deals.
+    </p>
+    
+    <h3 class="modal-subtitle">How it works:</h3>
+    <ol class="modal-list">
+      <li><strong>Select a brand</strong> from your dealership's inventory</li>
+      <li><strong>Choose Lease or Buy</strong> to load the appropriate template</li>
+      <li><strong>Fill in the variables</strong> (pricing, terms, dates)</li>
+      <li><strong>Preview in real-time</strong> as you type</li>
+      <li><strong>Submit</strong> to generate the offer</li>
+    </ol>
+    
+    <div class="modal-note">
+      <p>
+        <strong>Demo Mode:</strong> You're logged in as Johnson Auto Group with access to BMW, Tesla, and Ford brands.
+      </p>
+    </div>
+  </div>
+`;
+document.body.appendChild(modal);
+
+// Modal controls
+helpButton.addEventListener("mouseenter", () => {
+  helpButton.style.transform = "scale(1.1)";
 });
-
-// ====================================
-// ✅ Place this function BELOW fetchData(), ABOVE handleSubmitOffer()
-// ====================================
-async function sendEmailToUser(dealerId) {
-  // Ensure `users` is loaded before running this function
-  if (!users || users.length === 0) {
-    console.error("❌ Users data not loaded yet!");
-    alert("Users not loaded. Please try again later.");
-    return;
+helpButton.addEventListener("mouseleave", () => {
+  helpButton.style.transform = "scale(1)";
+});
+helpButton.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+modal.addEventListener("click", (e) => {
+  if (e.target === modal || e.target.id === "closeModal") {
+    modal.style.display = "none";
   }
-
-  // Find the user by dealer_id
-  const user = users.find(u => u.dealer_id === dealerId);
-
-  if (!user) {
-    alert("User not found!");
-    return;
-  }
-
-  const emailData = {
-    dealer_name: user.dealer_name,
-    dealer_email: user.email,  // ✅ User's email from JSON
-    message: `Hello ${user.dealer_name}, this is a test email!`,
-    timestamp: new Date().toISOString()
-  };
-
-  try {
-    console.log("📧 Sending EmailJS Data:", emailData);
-
-    await emailjs.send(
-      "service_y04y7fh",  // ✅ Your Service ID
-      "template_4g4ajbg", // ✅ Your Template ID
-      emailData,
-      "Qr8ucWUkLFcYYKujc"  // ✅ Your Public Key
-    );
-
-    alert(`Email sent to ${user.email}!`);
-  } catch (error) {
-    console.error("❌ EmailJS Error:", error);
-    alert("Failed to send email.");
-  }
-}
-
-// ====================================
-// ✅ Example Usage: Call this when needed
-// ====================================
-// This sends an email to Thunder Mercedes of Union (user with dealer_id: "mercedes_dealer_001")
-
-
-
+});
 
 let selectedUser = null;
 let selectedOfferType = null;
 
 // --- DOM Elements ---
-const submitButton = document.getElementById("submitCode");
 const logoutButton = document.getElementById("logoutButton");
 const formContainer = document.getElementById("form-container");
 const displayContainer = document.getElementById("display-container");
@@ -98,11 +89,29 @@ const displayContainer = document.getElementById("display-container");
 // Hide logout button initially
 logoutButton.style.display = "none";
 
-// --- Event Listeners ---
-submitButton.addEventListener("click", handleLogin);
-logoutButton.addEventListener("click", handleLogout);
-document.getElementById("userCodeInput").addEventListener("keypress", (e) => {
-  if (e.key === "Enter") handleLogin();
+// ✅ Ensure event listeners & email function only run **after** data is loaded
+fetchData().then(() => {
+  // Auto-login for demo
+  const demoUser = users.find(u => u.code === "1113");
+  if (demoUser) {
+    selectedUser = demoUser;
+    displayBrandSelection(demoUser);
+    logoutButton.style.display = "block";
+  }
+
+  logoutButton.addEventListener("click", handleLogout);
+
+  // Flash the help button 10 times
+  let flashCount = 0;
+  const flashInterval = setInterval(() => {
+    if (flashCount >= 20) {
+      clearInterval(flashInterval);
+      helpButton.style.transform = "scale(1)";
+      return;
+    }
+    helpButton.style.transform = flashCount % 2 === 0 ? "scale(1.3)" : "scale(1)";
+    flashCount++;
+  }, 200);
 });
 
 function handleLogin() {
@@ -122,7 +131,6 @@ function handleLogin() {
     displayBrandSelection(user);
     logoutButton.style.display = "block";
 
-    // ✅ Only display offers if the user is authorized
     if (user.dealer_id === "admin") {
       displayOffersTable();
     }
@@ -132,28 +140,21 @@ function handleLogin() {
   }
 }
 
-
-
-
-// ✅ Function to Display Offers in a Table
 function displayOffersTable() {
   if (!selectedUser) return;
 
-  // ✅ Define which users can see all offers
-  const allowedUsers = ["admin"]; // Add dealer IDs that can see all offers
+  const allowedUsers = ["admin"];
 
   if (!allowedUsers.includes(selectedUser.dealer_id)) {
     console.log("❌ User does not have permission to view offers.");
-    return; // Exit if the user isn't allowed
+    return;
   }
 
-  // ✅ Fetch offers from db.json
   fetch("/db.json")
     .then(response => response.json())
     .then(data => {
       const offers = data.offers;
 
-      // ✅ Create Table
       let tableHTML = `
         <h3>All Offers</h3>
         <table border="1">
@@ -169,7 +170,6 @@ function displayOffersTable() {
           <tbody>
       `;
 
-      // ✅ Loop through offers and add them to the table
       offers.forEach(offer => {
         tableHTML += `
           <tr>
@@ -183,14 +183,10 @@ function displayOffersTable() {
       });
 
       tableHTML += `</tbody></table>`;
-
-      // ✅ Display Table in the Page
       displayContainer.innerHTML += tableHTML;
     })
     .catch(error => console.error("Error fetching offers:", error));
 }
-
-
 
 function displayBrandSelection(user) {
   formContainer.innerHTML = `<h2>Welcome, ${user.dealer_name}</h2>`;
@@ -254,7 +250,6 @@ function displayTemplate(type) {
   displayForm(type);
 }
 
-
 function displayForm(type) {
   const brand = document.getElementById("brandSelect").value;
   const templateString = templates[brand]?.[type];
@@ -275,14 +270,13 @@ function displayForm(type) {
   placeholders.forEach((variable) => {
     let defaultValue = brandVariables[variable] || "";
 
-    // Determine input type based on variable name
     let inputClass = "";
     if (variable.includes("MONTHLY_PAYMENT") || variable.includes("DOWN_PAYMENT")) {
-      inputClass = "currency-input";  // Format as currency ($)
+      inputClass = "currency-input";
     } else if (variable.includes("APR_RATE")) {
-      inputClass = "percentage-input";  // Format as percentage (%)
+      inputClass = "percentage-input";
     } else if (variable.includes("TERM") || variable.includes("MONTHS")) {
-      inputClass = "month-input";  // Format as months
+      inputClass = "month-input";
     }
 
     formHTML += `
@@ -298,7 +292,6 @@ function displayForm(type) {
 
   displayContainer.innerHTML += formHTML;
 
-  // ✅ Attach event listeners **AFTER** the inputs have been added to the DOM
   document.querySelectorAll(".dynamic-input").forEach(input => {
     input.addEventListener("input", () => {
       checkFormCompletion();
@@ -314,14 +307,11 @@ function displayForm(type) {
   updateTemplatePreview(type);
 }
 
-
-
 function checkFormCompletion() {
   const inputs = document.querySelectorAll(".dynamic-input");
   const allFilled = Array.from(inputs).every(input => input.value.trim() !== "");
   document.getElementById("confirmOffer").disabled = !allFilled;
 }
-
 
 function updateTemplatePreview(type) {
   const brand = document.getElementById("brandSelect").value;
@@ -336,7 +326,6 @@ function updateTemplatePreview(type) {
   document.getElementById("offer-preview").textContent = updatedTemplate;
 }
 
-// ✅ Attach formatting event listeners **AFTER** inputs are created
 document.addEventListener("input", (event) => {
   if (event.target.classList.contains("currency-input")) {
     formatCurrency(event.target);
@@ -348,35 +337,26 @@ document.addEventListener("input", (event) => {
 });
 
 function formatCurrency(input) {
-  let value = input.value.replace(/[^0-9.]/g, ""); // Remove non-numeric chars except "."
-
-  if (value.startsWith("$")) value = value.slice(1); // Remove existing "$"
-
+  let value = input.value.replace(/[^0-9.]/g, "");
+  if (value.startsWith("$")) value = value.slice(1);
   const parts = value.split(".");
   if (parts.length > 2) {
-    value = parts[0] + "." + parts.slice(1).join(""); // Ensure only one "."
+    value = parts[0] + "." + parts.slice(1).join("");
   }
-
-  input.value = value ? `$${value}` : ""; // Add "$" only once
+  input.value = value ? `$${value}` : "";
 }
 
 function formatPercentage(input) {
-  let value = input.value.replace(/[^0-9.]/g, ""); // Remove non-numeric chars
-
-  if (value.endsWith("%")) value = value.slice(0, -1); // Remove existing "%"
-
-  input.value = value ? `${value}%` : ""; // Add "%" only once
+  let value = input.value.replace(/[^0-9.]/g, "");
+  if (value.endsWith("%")) value = value.slice(0, -1);
+  input.value = value ? `${value}%` : "";
 }
 
 function formatMonths(input) {
-  let value = input.value.replace(/[^0-9]/g, ""); // Allow only numbers
-
-  if (value.endsWith(" months")) value = value.replace(" months", ""); // Remove duplicate
-
-  input.value = value ? `${value} months` : ""; // Add "months" only once
+  let value = input.value.replace(/[^0-9]/g, "");
+  if (value.endsWith(" months")) value = value.replace(" months", "");
+  input.value = value ? `${value} months` : "";
 }
-
-
 
 async function handleSubmitOffer() {
   const brand = document.getElementById("brandSelect").value;
@@ -387,68 +367,79 @@ async function handleSubmitOffer() {
     return;
   }
 
-  // ✅ Replace placeholders with actual values from the form
   document.querySelectorAll(".dynamic-input").forEach(input => {
     const key = input.id;
-    const value = input.value.trim() || `{${key}}`;  // Avoid leaving placeholders
+    const value = input.value.trim() || `{${key}}`;
     offerText = offerText.replace(new RegExp(`\\{${key}\\}`, "g"), value);
   });
 
-  console.log("✅ Final offerText before sending:", offerText); // 🔍 Debugging Step
-
   const offerData = {
+    id: Date.now().toString(),
     dealer_name: selectedUser.dealer_name,
     dealer_email: selectedUser.email,
     dealer_id: selectedUser.dealer_id,
     selectedBrand: brand,
     offerType: selectedOfferType,
-    offerText: offerText, // ✅ Now fully replaced
+    offerText: offerText,
     timestamp: new Date().toISOString()
   };
 
-  try {
-    // ✅ Step 1: Save offer to db.json
-    const response = await fetch("http://localhost:3000/offers", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(offerData)
-    });
-
-    if (!response.ok) throw new Error("Failed to save offer");
-    console.log("📧 Sending EmailJS Data:", {
-      dealer_name: offerData.dealer_name,
-      dealer_email: offerData.dealer_email,
-      selectedBrand: offerData.selectedBrand,
-      offerType: offerData.offerType,
-      offerText: offerData.offerText,  // ✅ Ensure it's included
-      timestamp: offerData.timestamp
-    });
-
-
-    // ✅ Step 2: Ensure EmailJS receives the correct offerText
-    await emailjs.send(
-      "service_y04y7fh",  // ✅ Your Service ID
-      "template_4g4ajbg", // ✅ Your Template ID
-      {
-        dealer_name: offerData.dealer_name,
-        dealer_email: offerData.dealer_email,
-        selectedBrand: offerData.selectedBrand,
-        offerType: offerData.offerType,
-        offerText: offerData.offerText,  // ✅ Make sure this is fully replaced
-        timestamp: offerData.timestamp
-      },
-      "Qr8ucWUkLFcYYKujc"  // ✅ Your Public Key
-    );
-
-    alert("Offer successfully submitted and email sent!");
-    displayContainer.innerHTML = ""; // Clear form after submit
-  } catch (error) {
-    alert("Error submitting offer: " + error.message);
-  }
+  console.log("📧 Demo Mode - Offer created:", offerData);
+  
+  showOfferModal(offerText, brand);
+  displayContainer.innerHTML = "";
 }
 
-
-
+function showOfferModal(offerText, brand) {
+  const offerModal = document.createElement("div");
+  offerModal.id = "offerModal";
+  offerModal.className = "modal-overlay offer-modal";
+  
+  offerModal.innerHTML = `
+    <div class="modal-content offer-modal-content">
+      <div class="offer-header">
+        <div class="offer-checkmark">✅</div>
+        <h2>Offer Created!</h2>
+        <p class="offer-subtitle">${brand.charAt(0).toUpperCase() + brand.slice(1)} ${selectedOfferType === 'lease' ? 'Lease' : 'Purchase'} Offer</p>
+      </div>
+      
+      <div class="offer-text-container">
+        <p id="offerTextContent">${offerText}</p>
+      </div>
+      
+      <button id="copyBtn" class="copy-button">
+        <span>📋</span> Copy to Clipboard
+      </button>
+      
+      <p class="close-hint">Click anywhere outside to close</p>
+    </div>
+  `;
+  
+  document.body.appendChild(offerModal);
+  
+  // Trigger animation
+  setTimeout(() => offerModal.classList.add("visible"), 10);
+  
+  const copyBtn = offerModal.querySelector("#copyBtn");
+  copyBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(offerText).then(() => {
+      copyBtn.innerHTML = "<span>✅</span> Copied!";
+      copyBtn.classList.add("copied");
+      setTimeout(() => {
+        copyBtn.innerHTML = "<span>📋</span> Copy to Clipboard";
+        copyBtn.classList.remove("copied");
+      }, 2000);
+    });
+  });
+  
+  offerModal.addEventListener("click", (e) => {
+    if (e.target === offerModal) {
+      offerModal.classList.remove("visible");
+      setTimeout(() => offerModal.remove(), 300);
+    }
+  });
+}
 
 function handleLogout() {
   localStorage.removeItem("userCode");
@@ -462,10 +453,8 @@ function handleLogout() {
   displayContainer.innerHTML = "";
   logoutButton.style.display = "none";
 
-  // ✅ Reattach event listeners to the newly created elements
   document.getElementById("submitCode").addEventListener("click", handleLogin);
   document.getElementById("userCodeInput").addEventListener("keypress", (e) => {
     if (e.key === "Enter") handleLogin();
   });
 }
-
