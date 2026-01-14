@@ -1,0 +1,124 @@
+/* General Page Layout */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #f2f2f2;
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Two-Column Layout */
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Left Column - Login, Brand Selection, Buttons */
+/* Left Column - Login, Brand Selection, Buttons */
+#form-container {
+  flex: 1;
+  background: #292929;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Position Logout Button Below Buy Button */
+#logoutButton {
+  display: none;
+  margin-top: 24px; /* 1.5 inches (~24px) below Buy button */
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #d9534f;
+  color: white;
+  cursor: pointer;
+}
+
+#logoutButton:hover {
+  background: #c9302c;
+}
+
+
+/* Right Column - Offer Preview & Form */
+#display-container {
+  flex: 1;
+  background: #292929;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Labels & Inputs */
+label {
+  display: block;
+  font-weight: 500;
+  margin: 10px 0 5px;
+}
+
+input,
+.dynamic-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #333;
+  color: white;
+  margin-bottom: 10px;
+}
+
+input:focus,
+.dynamic-input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 5px #646cff;
+}
+
+/* Offer Preview */
+#offer-preview {
+  margin-top: 15px;
+  padding: 15px;
+  background: #222;
+  border-radius: 6px;
+  border: 1px solid #444;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  min-height: 80px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#logoutButton {
+  width: auto;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}
+

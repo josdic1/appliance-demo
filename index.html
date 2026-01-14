@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/pliers.svg" />
+  <title> 🚗 C A R P L I A N C E</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Left Column: Login, brand selection, buttons -->
+    <div id="form-container">
+      <h2>Dealer Login</h2>
+      <input type="text" id="userCodeInput" placeholder="Enter Code (e.g., a1a2)" maxlength="10" />
+      <button id="submitCode">Submit</button>
+      <!-- Brand selection and Lease/Buy buttons will be injected here -->
+    </div>
+
+    <!-- Right Column: Offer preview and dynamic form -->
+    <div id="display-container">
+      <!-- Offer preview (template text) and form appear here -->
+    </div>
+  </div>
+  <!-- A logout button (positioned outside the columns) -->
+  <button id="logoutButton">Logout</button>
+
+  <script type="module" src="/src/index.js"></script>
+</body>
+
+</html>
