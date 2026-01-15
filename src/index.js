@@ -7,7 +7,7 @@ let variables = {};
 // ✅ Fetch data first
 async function fetchData() {
   try {
-    const response = await fetch("/db.json");
+    const response = await fetch("./db.json");
     if (!response.ok) throw new Error("Failed to load data");
 
     const data = await response.json();

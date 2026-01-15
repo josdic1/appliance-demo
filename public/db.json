@@ -1,0 +1,428 @@
+{
+  "offers": [
+    {
+      "id": "856d",
+      "dealer_name": "Wheeler Cars",
+      "dealer_id": "multi_brand_dealer_001",
+      "selectedBrand": "mercedes",
+      "offerText": "Mercedez-Benz {YEAR} {MODEL}. Qualified customers only. {APR_RATE}% APR financing for {APR_TERM} months at {MONTHLY_COST_PER_1000_FINANCED} per month, per $1,000 financed. Excludes leases and balloon contracts. Available only at participating authorized Mercedes-Benz dealers through Mercedes-Benz Financial Services. Must take delivery of vehicle by {EXPIRATION_DATE}. Specific vehicles are subject to availability and may have to be ordered. Subject to credit approval by lender. Rate applies only to Mercedes-Benz model vehicle listed. Not everyone will qualify. Offer excludes certain optional equipment shown or described. See your authorized Mercedes-Benz dealer for complete details on this and other finance offers. Offer not valid in Puerto Rico.",
+      "timestamp": "2025-02-25T18:25:18.624Z"
+    },
+    {
+      "id": "3c7e",
+      "dealer_name": "Wheeler Cars",
+      "dealer_id": "multi_brand_dealer_001",
+      "selectedBrand": "mercedes",
+      "offerText": "Mercedez-Benz 2024 S-Class. Qualified customers only. 34% APR financing for 35 months at $399 per month, per $1,000 financed. Excludes leases and balloon contracts. Available only at participating authorized Mercedes-Benz dealers through Mercedes-Benz Financial Services. Must take delivery of vehicle by 1/1/2026. Specific vehicles are subject to availability and may have to be ordered. Subject to credit approval by lender. Rate applies only to Mercedes-Benz model vehicle listed. Not everyone will qualify. Offer excludes certain optional equipment shown or described. See your authorized Mercedes-Benz dealer for complete details on this and other finance offers. Offer not valid in Puerto Rico.",
+      "timestamp": "2025-02-25T18:27:12.152Z"
+    },
+    {
+      "id": "a565",
+      "dealer_name": "Premium Motors",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_003",
+      "selectedBrand": "honda",
+      "offerType": "lease",
+      "offerText": "2024 Honda Civic. Lease for $399/mo for 36 months. Includes Full. Expires March 31, 2025.",
+      "timestamp": "2025-02-25T19:19:45.624Z"
+    },
+    {
+      "id": "e790",
+      "dealer_name": "Elite Toyota",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "toyota_dealer_001",
+      "selectedBrand": "toyota",
+      "offerType": "buy",
+      "offerText": "2025 Toyota Corolla. 34% APR for 35 months. Includes 12 years powertrain warranty. Expires 3/3/29.",
+      "timestamp": "2025-02-25T19:22:36.044Z"
+    },
+    {
+      "id": "6bae",
+      "dealer_name": "Premium Motors",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_003",
+      "selectedBrand": "nissan",
+      "offerType": "lease",
+      "offerText": "2021 Nissan Ultima. Lease for 399/mo. Down payment: 1000. Expires 3/3/29.",
+      "timestamp": "2025-02-25T19:24:50.314Z"
+    },
+    {
+      "id": "9268",
+      "dealer_name": "Elite Toyota",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "toyota_dealer_001",
+      "selectedBrand": "toyota",
+      "offerType": "buy",
+      "offerText": "2025 Toyota Corolla. 34% APR for 35 months. Includes 12 years powertrain warranty. Expires 3/3/29.",
+      "timestamp": "2025-02-25T19:29:05.456Z"
+    },
+    {
+      "id": "4d98",
+      "dealer_name": "Johnson Auto Group",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_002",
+      "selectedBrand": "bmw",
+      "offerType": "buy",
+      "offerText": "2024 BMW M3. 34% APR for 35 months. Expires 3/3/29.",
+      "timestamp": "2025-02-25T19:32:24.761Z"
+    },
+    {
+      "id": "6512",
+      "dealer_name": "Premium Motors",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_003",
+      "selectedBrand": "chevrolet",
+      "offerType": "buy",
+      "offerText": "2021 Chevrolet Tahoe. 36% APR for 36 months. Includes 12 years warranty. Expires March 31, 2025.",
+      "timestamp": "2025-02-25T19:36:57.885Z"
+    },
+    {
+      "id": "8b9d",
+      "dealer_name": "Wheeler Cars",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_001",
+      "selectedBrand": "mercedes",
+      "offerType": "buy",
+      "offerText": "Mercedez-Benz 2024 G-Wagon. Qualified customers only. 34% APR financing for 35 months at 399 per month, per $1,000 financed. Excludes leases and balloon contracts. Available only at participating authorized Mercedes-Benz dealers through Mercedes-Benz Financial Services. Must take delivery of vehicle by 3/3/29. Specific vehicles are subject to availability and may have to be ordered. Subject to credit approval by lender. Rate applies only to Mercedes-Benz model vehicle listed. Not everyone will qualify. Offer excludes certain optional equipment shown or described. See your authorized Mercedes-Benz dealer for complete details on this and other finance offers. Offer not valid in Puerto Rico.",
+      "timestamp": "2025-02-25T19:37:49.219Z"
+    },
+    {
+      "id": "db5a",
+      "dealer_name": "Johnson Auto Group",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_002",
+      "selectedBrand": "tesla",
+      "offerType": "buy",
+      "offerText": "2024 Tesla S1. 34% APR for 35 months. Includes Full. Expires March 31, 2025.",
+      "timestamp": "2025-02-25T19:44:54.209Z"
+    },
+    {
+      "id": "e3d0",
+      "dealer_name": "Johnson Auto Group",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_002",
+      "selectedBrand": "ford",
+      "offerType": "lease",
+      "offerText": "2025 Ford F-150. Lease for 199/mo for 23 months. Fuel Type: Diesel. Expires 4/4/25.",
+      "timestamp": "2025-02-25T19:46:19.040Z"
+    },
+    {
+      "id": "4996",
+      "dealer_name": "West Ford Dealership",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "ford_dealer_001",
+      "selectedBrand": "ford",
+      "offerType": "lease",
+      "offerText": "2025 Ford Bronco Sport. Lease for 299/mo for 24 months. Fuel Type: Regular. Expires 3/3/29.",
+      "timestamp": "2025-02-25T20:01:42.460Z"
+    },
+    {
+      "id": "b8e1",
+      "dealer_name": "Premium Motors",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_003",
+      "selectedBrand": "honda",
+      "offerType": "buy",
+      "offerText": "2024 Honda Civic. 10%% APR for 26 months months. Expires 1/1/28.",
+      "timestamp": "2025-02-25T20:16:45.233Z"
+    },
+    {
+      "id": "1c60",
+      "dealer_name": "Johnson Auto Group",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_002",
+      "selectedBrand": "tesla",
+      "offerType": "lease",
+      "offerText": "2025 Tesla S1 Turbo. Lease at $499/mo for 36 months months. Battery range: 500 miles miles. Expires 3/3/25.",
+      "timestamp": "2025-02-25T20:20:47.491Z"
+    },
+    {
+      "id": "63ab",
+      "dealer_name": "Thunder Mercedes of Union",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "mercedes_dealer_001",
+      "selectedBrand": "mercedes",
+      "offerType": "buy",
+      "offerText": "Mercedez-Benz 2025 G-Wagon. Qualified customers only. 10%% APR financing for 26 months months at 399 per month, per $1,000 financed. Excludes leases and balloon contracts. Available only at participating authorized Mercedes-Benz dealers through Mercedes-Benz Financial Services. Must take delivery of vehicle by 3/1/2026. Specific vehicles are subject to availability and may have to be ordered. Subject to credit approval by lender. Rate applies only to Mercedes-Benz model vehicle listed. Not everyone will qualify. Offer excludes certain optional equipment shown or described. See your authorized Mercedes-Benz dealer for complete details on this and other finance offers. Offer not valid in Puerto Rico.",
+      "timestamp": "2025-02-26T14:51:31.852Z"
+    },
+    {
+      "id": "0e26",
+      "dealer_name": "Thunder Mercedes of Union",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "mercedes_dealer_001",
+      "selectedBrand": "mercedes",
+      "offerType": "buy",
+      "offerText": "Mercedez-Benz 2021 G-Wagon. Qualified customers only. 3.99%% APR financing for 35 months months at 100 per month, per $1,000 financed. Excludes leases and balloon contracts. Available only at participating authorized Mercedes-Benz dealers through Mercedes-Benz Financial Services. Must take delivery of vehicle by 2/227. Specific vehicles are subject to availability and may have to be ordered. Subject to credit approval by lender. Rate applies only to Mercedes-Benz model vehicle listed. Not everyone will qualify. Offer excludes certain optional equipment shown or described. See your authorized Mercedes-Benz dealer for complete details on this and other finance offers. Offer not valid in Puerto Rico.",
+      "timestamp": "2025-02-26T15:07:36.157Z"
+    },
+    {
+      "id": "feaf",
+      "dealer_name": "Wheeler Cars",
+      "dealer_email": "thejscott5@email.com",
+      "dealer_id": "multi_brand_dealer_001",
+      "selectedBrand": "kia",
+      "offerType": "lease",
+      "offerText": "2025 Kia Sorento. Lease for $299/mo for 26 months mos. 1000 due at signing. Stock: 3456A3. VIN: 123456789. MSRP: 50000. 26 months Months incentives include: 100 LEASE CASH, 10% MILITARY, 3% LOYALTY. Residual value 35000. Includes TT&L and doc fee. 12000 miles/yr. On approved credit. No security deposit. Subject to credit approval by Kia Finance America (KFA). Lessee is responsible for insurance, maintenance, repairs, .25 per mile over 12000 miles/year, excess wear, and a termination fee of up to 100. Offer expires 3/1/25.",
+      "timestamp": "2025-02-26T15:09:00.431Z"
+    }
+  ],
+  "variables": {
+    "mercedes": {
+      "YEAR": "",
+      "MODEL": "",
+      "EXPIRATION_DATE": "",
+      "MONTHLY_PAYMENT": "",
+      "LEASE_TERM": "",
+      "MSRP": "",
+      "GROSS_CAP_COST": "",
+      "OPTIONAL_PACKAGE": "",
+      "TOTAL_MONTHLY_PAYMENTS": "",
+      "CASH_DUE_AT_SIGNING": "",
+      "ACQUISITION_FEE": "",
+      "FIRST_MONTH_PAYMENT": "",
+      "TOTAL_PAYMENTS": "",
+      "OVERAGE_COST_PER_MILE": "",
+      "MILEAGE_ALLOWANCE": "",
+      "TURN_IN_FEE": "",
+      "PURCHASE_OPTION": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "MONTHLY_COST_PER_1000_FINANCED": ""
+    },
+    "kia": {
+      "YEAR": "",
+      "MODEL": "",
+      "EXPIRATION_DATE": "",
+      "MONTHLY_PAYMENT": "",
+      "LEASE_TERM": "",
+      "MSRP": "",
+      "CASH_DUE_AT_SIGNING": "",
+      "STOCK_NUMBER": "",
+      "VIN": "",
+      "LEASE_CASH": "",
+      "MILITARY_INCENTIVE": "",
+      "LOYALTY_INCENTIVE": "",
+      "RESIDUAL_VALUE": "",
+      "MILEAGE_ALLOWANCE": "",
+      "OVERAGE_COST_PER_MILE": "",
+      "TURN_IN_FEE": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "MONTHLY_COST_PER_1000_FINANCED": ""
+    },
+    "toyota": {
+      "YEAR": "",
+      "MODEL": "",
+      "DOWN_PAYMENT": "",
+      "FUEL_TYPE": "",
+      "WARRANTY_YEARS": "",
+      "TECH_PACKAGE": "",
+      "EXPIRATION_DATE": ""
+    },
+    "ford": {
+      "YEAR": "",
+      "MODEL": "",
+      "FUEL_TYPE": "",
+      "MSRP": "",
+      "TECH_PACKAGE": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "EXPIRATION_DATE": ""
+    },
+    "bmw": {
+      "YEAR": "",
+      "MODEL": "",
+      "LUXURY_PACKAGE": "",
+      "MSRP": "",
+      "MONTHLY_PAYMENT": "",
+      "LEASE_TERM": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "EXPIRATION_DATE": ""
+    },
+    "tesla": {
+      "YEAR": "",
+      "MODEL": "",
+      "BATTERY_RANGE": "",
+      "MSRP": "",
+      "MONTHLY_PAYMENT": "",
+      "LEASE_TERM": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "EXPIRATION_DATE": ""
+    },
+    "chevrolet": {
+      "YEAR": "",
+      "MODEL": "",
+      "FUEL_TYPE": "",
+      "DOWN_PAYMENT": "",
+      "MSRP": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "EXPIRATION_DATE": ""
+    },
+    "honda": {
+      "YEAR": "",
+      "MODEL": "",
+      "TECH_PACKAGE": "",
+      "MSRP": "",
+      "MONTHLY_PAYMENT": "",
+      "LEASE_TERM": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "EXPIRATION_DATE": ""
+    },
+    "nissan": {
+      "YEAR": "",
+      "MODEL": "",
+      "DOWN_PAYMENT": "",
+      "MSRP": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "EXPIRATION_DATE": ""
+    },
+    "audi": {
+      "YEAR": "",
+      "MODEL": "",
+      "FUEL_TYPE": "",
+      "MSRP": "",
+      "TECH_PACKAGE": "",
+      "APR_RATE": "",
+      "APR_TERM": "",
+      "LEASE_TERM": "",
+      "MONTHLY_PAYMENT": "",
+      "DOWN_PAYMENT": "",
+      "EXPIRATION_DATE": ""
+    }
+  },
+  "templates": {
+    "mercedes": {
+      "lease": "Lease Disclaimer: {YEAR} Mercedes-Benz {MODEL} Available only to qualified customers through Mercedes-Benz Financial Services (where applicable to advertised lease) at participating authorized Mercedes-Benz dealers through {EXPIRATION_DATE}. Not everyone will qualify. Advertised {MONTHLY_PAYMENT} per month for {LEASE_TERM} months lease rate based on MSRP of {MSRP} less the suggested dealer contribution resulting in a total gross capitalized cost of {GROSS_CAP_COST}. DEALER SETS FINAL PRICE. Dealer contribution may vary and could affect your actual lease payment. Includes Destination Charge and optional ({OPTIONAL_PACKAGE}). Excludes title, taxes, registration, license fees, insurance, dealer prep, and additional options. Total monthly payments equal {TOTAL_MONTHLY_PAYMENTS}. Cash due at signing includes {CASH_DUE_AT_SIGNING} capitalized cost reduction, {ACQUISITION_FEE} acquisition fee, and first month's lease payment of {FIRST_MONTH_PAYMENT}. No security deposit required. Total payments equal {TOTAL_PAYMENTS}. At lease end, lessee pays for any amounts due under the lease, any official fees and taxes related to the scheduled termination, excess wear and use plus {OVERAGE_COST_PER_MILE}/mile over {MILEAGE_ALLOWANCE} miles and a {TURN_IN_FEE} vehicle turn-in fee. Purchase option at lease end for {PURCHASE_OPTION} plus taxes (and any other fees and charges due under the applicable lease agreement). Subject to credit approval. Specific vehicles are subject to availability and may need to be ordered. See participating dealer for details. Offers not valid in Puerto Rico. Offer expires {EXPIRATION_DATE}.",
+      "buy": "Mercedez-Benz {YEAR} {MODEL}. Qualified customers only. {APR_RATE}% APR financing for {APR_TERM} months at {MONTHLY_COST_PER_1000_FINANCED} per month, per $1,000 financed. Excludes leases and balloon contracts. Available only at participating authorized Mercedes-Benz dealers through Mercedes-Benz Financial Services. Must take delivery of vehicle by {EXPIRATION_DATE}. Specific vehicles are subject to availability and may have to be ordered. Subject to credit approval by lender. Rate applies only to Mercedes-Benz model vehicle listed. Not everyone will qualify. Offer excludes certain optional equipment shown or described. See your authorized Mercedes-Benz dealer for complete details on this and other finance offers. Offer not valid in Puerto Rico."
+    },
+    "kia": {
+      "lease": "{YEAR} Kia {MODEL}. Lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} mos. {CASH_DUE_AT_SIGNING} due at signing. Stock: {STOCK_NUMBER}. VIN: {VIN}. MSRP: {MSRP}. {LEASE_TERM} Months incentives include: {LEASE_CASH} LEASE CASH, {MILITARY_INCENTIVE} MILITARY, {LOYALTY_INCENTIVE} LOYALTY. Residual value {RESIDUAL_VALUE}. Includes TT&L and doc fee. {MILEAGE_ALLOWANCE} miles/yr. On approved credit. No security deposit. Subject to credit approval by Kia Finance America (KFA). Lessee is responsible for insurance, maintenance, repairs, {OVERAGE_COST_PER_MILE} per mile over {MILEAGE_ALLOWANCE} miles/year, excess wear, and a termination fee of up to {TURN_IN_FEE}. Offer expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} Kia {MODEL}. Finance for {APR_RATE} APR for {APR_TERM} months. For qualified customers. {APR_RATE} APR available on new {YEAR} Kia {MODEL} vehicles for up to {APR_TERM} months. {MONTHLY_COST_PER_1000_FINANCED} per month per $1,000 financed at {APR_TERM} months. APR financing available, subject to credit approval by Kia Finance America (KFA), through (KFA), to very well-qualified buyers and not available on balloon financing. Only a limited number of customers will qualify for advertised APR. No down payment required. Must take delivery from a participating dealer and from retail stock by {EXPIRATION_DATE}. New vehicles only. Finance contract must be signed and dated no later than {EXPIRATION_DATE}."
+    },
+    "toyota": {
+      "lease": "{YEAR} Toyota {MODEL}. Lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {TECH_PACKAGE}. MSRP: {MSRP}. Expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} Toyota {MODEL}. {APR_RATE}% APR for {APR_TERM} months. Includes {WARRANTY_YEARS} years powertrain warranty. Expires {EXPIRATION_DATE}."
+    },
+    "ford": {
+      "lease": "{YEAR} Ford {MODEL}. Lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Fuel Type: {FUEL_TYPE}. Expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} Ford {MODEL}. {APR_RATE}% APR for {APR_TERM} months. Includes {TECH_PACKAGE}. Expires {EXPIRATION_DATE}."
+    },
+    "bmw": {
+      "lease": "{YEAR} BMW {MODEL}. Lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Luxury package included. Expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} BMW {MODEL}. {APR_RATE}% APR for {APR_TERM} months. Expires {EXPIRATION_DATE}."
+    },
+    "tesla": {
+      "lease": "{YEAR} Tesla {MODEL}. Lease at {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Battery range: {BATTERY_RANGE} miles. Expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} Tesla {MODEL}. {APR_RATE}% APR for {APR_TERM} months. Includes {TECH_PACKAGE}. Expires {EXPIRATION_DATE}."
+    },
+    "chevrolet": {
+      "lease": "{YEAR} Chevrolet {MODEL}. Lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Down payment: {DOWN_PAYMENT}. Expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} Chevrolet {MODEL}. {APR_RATE}% APR for {APR_TERM} months. Includes {WARRANTY_YEARS} years warranty. Expires {EXPIRATION_DATE}."
+    },
+    "honda": {
+      "lease": "{YEAR} Honda {MODEL}. Lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {TECH_PACKAGE}. Expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} Honda {MODEL}. {APR_RATE}% APR for {APR_TERM} months. Expires {EXPIRATION_DATE}."
+    },
+    "nissan": {
+      "lease": "{YEAR} Nissan {MODEL}. Lease for {MONTHLY_PAYMENT}/mo. Down payment: {DOWN_PAYMENT}. Expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} Nissan {MODEL}. {APR_RATE}% APR for {APR_TERM} months. Includes {FUEL_TYPE}. Expires {EXPIRATION_DATE}."
+    },
+    "audi": {
+      "lease": "{YEAR} Audi {MODEL}. Lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Fuel Type: {FUEL_TYPE}. Expires {EXPIRATION_DATE}.",
+      "buy": "{YEAR} Audi {MODEL}. {APR_RATE}% APR for {APR_TERM} months. Includes {TECH_PACKAGE}. Expires {EXPIRATION_DATE}."
+    }
+  },
+  "users": [
+    {
+      "code": "0000",
+      "dealer_name": "Admin",
+      "dealer_id": "admin",
+      "brands": [
+        "audi",
+        "mercedes",
+        "kia",
+        "toyota",
+        "nissan",
+        "honda",
+        "tesla",
+        "ford",
+        "chevrolet",
+        "bmw"
+      ],
+      "email": "thejscott5@email.com",
+      "id": "5215"
+    },
+    {
+      "code": "1111",
+      "dealer_name": "Thunder Mercedes of Union",
+      "dealer_id": "mercedes_dealer_001",
+      "brands": [
+        "mercedes"
+      ],
+      "email": "thejscott5@email.com",
+      "id": "5215"
+    },
+    {
+      "code": "1112",
+      "dealer_name": "Wheeler Cars",
+      "dealer_id": "multi_brand_dealer_001",
+      "brands": [
+        "mercedes",
+        "kia",
+        "toyota"
+      ],
+      "email": "thejscott5@email.com",
+      "id": "d14c"
+    },
+    {
+      "code": "1113",
+      "dealer_name": "Johnson Auto Group",
+      "dealer_id": "multi_brand_dealer_002",
+      "brands": [
+        "bmw",
+        "tesla",
+        "ford"
+      ],
+      "email": "thejscott5@email.com",
+      "id": "b857"
+    },
+    {
+      "code": "1114",
+      "dealer_name": "Premium Motors",
+      "dealer_id": "multi_brand_dealer_003",
+      "brands": [
+        "chevrolet",
+        "honda",
+        "nissan"
+      ],
+      "email": "thejscott5@email.com",
+      "id": "1307"
+    },
+    {
+      "code": "1115",
+      "dealer_name": "Elite Toyota",
+      "dealer_id": "toyota_dealer_001",
+      "brands": [
+        "toyota"
+      ],
+      "email": "thejscott5@email.com",
+      "id": "9eec"
+    },
+    {
+      "code": "1116",
+      "dealer_name": "West Ford Dealership",
+      "dealer_id": "ford_dealer_001",
+      "brands": [
+        "ford"
+      ],
+      "email": "thejscott5@email.com",
+      "id": "766d"
+    }
+  ]
+}
